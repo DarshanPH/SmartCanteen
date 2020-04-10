@@ -1,0 +1,134 @@
+{% extends 'link.html' %} 
+
+{% block canteen %}
+
+<center>
+
+{% for orders in food_order  %}
+
+
+{% if orders.Order_Status == 'Waiting'%}
+<div class="table_number"> {{orders.Order_Number}}</div>
+<!-- News jumbotron -->
+<div class="jumbotron text-center hoverable p-4" style="width: 50%; margin-top: 2%;">
+
+  <!-- Grid row -->
+  <div class="row">
+
+    <!-- Grid column -->
+    <div class="col-md-4 offset-md-1 mx-3 my-3">
+
+      <!-- Featured image -->
+      <div class="view overlay">
+        <img src="{{orders.Item_Url}}" class="img-fluid">
+        <a>
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+
+    </div>
+    <!-- Grid column -->
+    
+
+    <!-- Grid column -->
+    <div class="col-md-7 text-md-left ml-3 mt-3">
+       
+        <h5 class="h5 orange-text"><i class="fas fa-utensils"></i> <strong>{{orders.Purchased_Item}}</strong></h5>
+      <h4 class="h4 mb-4">This is title of the news</h4>
+      <hr class="my-4 pb-2">
+      <div class="ui blue message" style="color: white;"><strong>Username</strong>: {{orders.Username}}</div>
+      <div class="alert alert-danger" role="alert"><strong>{{orders.item_count}} Plate</strong></div>
+      <div class="alert alert-secondary" role="alert"><strong>Table Number is {{orders.Table_Number}}</strong></div>
+      <div class="alert alert-info" role="alert"><strong>Payment Method is {{orders.Payment_Method}}</strong></div>
+      <div class="alert alert-danger"><strong>{{orders.Payment_Status}}</strong> Payment Status</div>
+      <hr class="my-4 pb-2">
+    </div>
+    <!-- Grid column -->
+    <form action="", method="POST">
+      <input type="hidden" name="order_status" value="Accepted">
+      <input type="hidden" name="order_number" value="{{orders.Order_Number}}">
+      <button class="btn blue-gradient btn-rounded"> Accept <i class="fas fa-check ml-1"></i></button></form>
+    <form action="", method="POST">
+      <input type="hidden" name="order_number" value="{{orders.Order_Number}}">
+      <input type="hidden" name="order_status" value="Ready">
+      <button class="btn btn-indigo btn-rounded"> Ready <i class="fas fa-check-double ml-1"></i></button></form>
+  </div>
+  <!-- Grid row -->
+
+</div>
+{% endif %}
+
+{% if orders.Order_Status == 'Accepted'%}
+<div class="table_number"> {{orders.Order_Number}}</div>
+<!-- News jumbotron -->
+<div class="jumbotron text-center hoverable p-4" style="width: 50%; margin-top: 2%;">
+
+  <!-- Grid row -->
+  <div class="row">
+
+    <!-- Grid column -->
+    <div class="col-md-4 offset-md-1 mx-3 my-3">
+
+      <!-- Featured image -->
+      <div class="view overlay">
+        <img src="{{orders.Item_Url}}" class="img-fluid">
+        <a>
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+
+    </div>
+    <!-- Grid column -->
+    
+
+    <!-- Grid column -->
+    <div class="col-md-7 text-md-left ml-3 mt-3">
+       
+        <h5 class="h5 orange-text"><i class="fas fa-utensils"></i> <strong>{{orders.Purchased_Item}}</strong></h5>
+      <h4 class="h4 mb-4">This is title of the news</h4>
+      <hr class="my-4 pb-2">
+      <div class="ui blue message" style="color: white;"><strong>Username</strong>: {{orders.Username}}</div>
+      <div class="alert alert-danger" role="alert"><strong>{{orders.item_count}} Plate</strong></div>
+      <div class="alert alert-secondary" role="alert"><strong>Table Number is {{orders.Table_Number}}</strong></div>
+      <div class="alert alert-info" role="alert"><strong>Payment Method is {{orders.Payment_Method}}</strong></div>
+      <div class="alert alert-danger"><strong>{{orders.Payment_Status}}</strong> Payment Status</div>
+      <hr class="my-4 pb-2">
+    </div>
+    <!-- Grid column -->
+    <form action="", method="POST">
+      <input type="hidden" name="order_status" value="Accepted">
+      <input type="hidden" name="order_number" value="{{orders.Order_Number}}">
+      <button class="btn blue-gradient btn-rounded" disabled> Accepted <i class="fas fa-check ml-1"></i></button></form>
+    <form action="", method="POST">
+      <input type="hidden" name="order_number" value="{{orders.Order_Number}}">
+      <input type="hidden" name="order_status" value="Ready">
+      <button class="btn btn-indigo btn-rounded"> Ready <i class="fas fa-check-double ml-1"></i></button></form>
+  </div>
+  <!-- Grid row -->
+
+</div>
+{% endif %}
+{% endfor %}
+
+
+<!-- News jumbotron -->
+</center>
+
+
+
+<style>
+  .table_number{
+    background-color: rgb(90, 90, 235);
+    width: 5%;
+    height: 3%;
+    color: white;
+    font-weight: bold;
+    position: relative;
+    top: 80px;
+    left: 22%;
+    border-radius: 40px;
+  }
+</style>
+
+
+{% endblock %}

@@ -1,0 +1,241 @@
+{% extends 'navbar.html' %}
+
+{% block input %}
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+
+<body>
+<div class="container" style="margin-left: 20%;">
+<div class="awesome text-left bg-dark">
+  YOUR RECENT ORDER DETAILS
+</div>
+
+{% for order_details in order_status %}
+<center>
+<div class="card">
+  <div class="card-header text-right">
+    <div class="text-Left">
+    <button class="ui facebook button">
+      <i class="fas fa-crown"></i>
+      Username: {{order_details.Username}}
+    </button>
+  </div>
+  <button class="ui youtube button">
+    <i class="fas fa-utensils icon"></i>
+    Table Number: {{order_details.Table_Number}}
+  </button>
+  </div>
+  <button class="ui green button text-Left"><i class="fas fa-rupee-sign"></i>
+    Price:
+    {{order_details.Total_Price}}
+  </button>
+  <div class="text-right">
+    <button class="ui circular facebook icon button">
+      No: {{order_details.Order_Number}}
+    </button>
+  </div>
+  <div class="card-body">
+    <!-- <p class="card-text text-left"></p> -->
+    {% if order_details.Order_Status == 'Waiting' %}
+    <div class="spinner-grow text-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow text-secondary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow text-success" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow text-danger" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow text-warning" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow text-info" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow text-light" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow text-dark" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <h5 class="card-title">    
+      <button class="ui linkedin button">
+      <i class="fas fa-sort-numeric-down"></i>
+      Your Ordere In A Queue
+    </button></h5>
+    {% endif %}
+    {% if order_details.Order_Status == 'Accepted' %}
+    <div class="spinner-grow text-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow text-secondary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow text-success" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow text-danger" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow text-warning" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow text-info" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow text-light" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow text-dark" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <h5 class="card-title">    
+      <button class="ui linkedin button">
+      <i class="fas fa-sort-numeric-down"></i>
+      Your Food Is Readying Now
+    </button></h5>
+    {% endif %}
+    {% if order_details.Order_Status == 'Ready' %}    
+      <button class="ui linkedin button">
+      <i class="fas fa-sort-numeric-down"></i>
+      Done, Thank You For Your Order
+    </button></h5>
+    {% endif %}
+    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+  </div>
+  <div class="card-footer text-muted">
+    {% if order_details.Payment_Status == 'Pending' %}
+    <button class="ui red button">
+    <i class="fas fa-rupee-sign icon"></i>
+    Pending Payment</button>
+  {% endif %}
+  {% if order_details.Payment_Status == 'Done' %}
+  <button class="ui red button">
+  <i class="fas fa-rupee-sign icon"></i>
+  Success Payment</button>
+  {% endif %}
+  </div>
+  
+
+</div>
+</center>
+{% endfor %}
+</div>
+
+
+{% for order_details in order_status %}
+
+<h1>Username {{order_details.Username}}</h1>
+<p>Table Number{{order_details.Table_Number}}</p>
+<h1>Food Status:{{order_details.Order_Status}}</h1>
+<h2>Food_name: {{order_details.Purchased_Item}}</h2>
+<h2>Plates: {{order_details.item_count}}</h2>
+<h2>Total Price:{{order_details.Total_Price}}</h2>
+<h2>Payment status: {{order_details.Payment_Status}}</h2>
+{% endfor %}
+
+
+<style>
+  .card{
+    margin-top: 9%;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0 5px 5px rgb(59, 59, 59);
+  }
+  
+  .center {
+      
+      margin: 0 auto;
+      
+    }
+
+    .awesome {
+      
+      width: 72%;
+      height: 10%;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 3px 4px green;
+      margin-top: 1.5%;
+
+      font-family: futura;
+      
+      
+      color:#313131;
+      font-size:25px;
+      font-weight: bold;
+      position: absolute;
+      -webkit-animation:colorchange 10s infinite alternate;
+      
+      
+    }
+
+    @-webkit-keyframes colorchange {
+      0% {
+        
+        color: blue;
+      }
+      
+      10% {
+        
+        color: #8e44ad;
+      }
+      
+      20% {
+        
+        color: #1abc9c;
+      }
+      
+      30% {
+        
+        color: #d35400;
+      }
+      
+      40% {
+        
+        color: blue;
+      }
+      
+      50% {
+        
+        color: #34495e;
+      }
+      
+      60% {
+        
+        color: blue;
+      }
+      
+      70% {
+        
+        color: #2980b9;
+      }
+      80% {
+     
+        color: #f1c40f;
+      }
+      
+      90% {
+     
+        color: #2980b9;
+      }
+      
+      100% {
+        
+        color: pink;
+      }
+      110%{
+      color: indigo;
+      background-color: khaki;
+      }
+    }
+</style>
+
+
+
+{% endblock %}

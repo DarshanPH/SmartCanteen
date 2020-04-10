@@ -1,0 +1,9 @@
+<input type="text" name="demo" id="" value="">
+
+<script>
+    var d = new Date();
+    var month = d.getMonth();
+    var date = d.getDate();
+    var year = d.getFullYear();
+    document.getElementsByName("demo").innerHTML = +month+1+"-"+date+"-"+year
+</script>

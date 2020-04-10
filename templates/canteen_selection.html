@@ -1,0 +1,21 @@
+{% extends 'link.html' %}
+
+{% block canteen  %}
+<html>
+    <head>
+        <title>Canteen selection</title>
+    </head>
+    <body>
+        <form action="" method="POST">
+        {% for clg_name in all_clg_name %}
+        {{clg_name}}
+        <input type="radio" name="clg_name" id="" value="{{clg_name}}">
+        
+        {% endfor %}
+        <input type="text" name="secret" placeholder="Enter The secret Number">
+        <input type="submit">
+        <h1>hai</h1>
+    </form>
+    </body>
+</html>
+{% endblock  %}

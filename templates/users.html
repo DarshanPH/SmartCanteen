@@ -1,0 +1,136 @@
+{% extends 'navbar.html' %}
+
+{% block input %}
+
+<div class="second-nav">
+</div>
+
+<style>
+.second-nav{
+  height: 6%;
+  width: 100%;
+  box-shadow: 0 2px 5px black;
+  padding: 10px;
+  margin-bottom: 2%;
+}
+</style>
+  <div class="container" style="margin-left: 20rem;">
+
+    
+      <div class="ui three stackable cards">
+        {% for canteen_foods in all_items %}
+        <form action="" method="POST">
+          <div class="form-group">
+        <div class="card" style="margin-top: 2%; margin-bottom: 8%;margin-right: 3%;">
+          <!-- <div class="image" style="height: 8rem;">
+            <img src="{{canteen_foods.Item_Pic}}" style="height: 200%;">
+          </div> -->
+
+          <div class="card-body">
+      <div class="ui card">
+        <div class="content">
+          <div class="right floated meta"></div>
+          <input type="hidden" name="Item_Url" value="{{canteen_foods.Item_Pic}}"/>
+          <input type="hidden" name="purchased_item" value="{{canteen_foods.Food_Name}}"/>
+          <input type="hidden" name="item_price" value="{{canteen_foods.Food_Price}}"/>
+          <div class="center aligned header">{{canteen_foods.Food_Name}}</div>
+          <div class="price" style="font-weight: bold; font-size: medium;"><i class="rupee sign icon"></i>{{canteen_foods.Food_Price}}</div>
+        </div>
+        <div class="image">
+          <img src="{{canteen_foods.Item_Pic}}" style="height: 25rem; width: 20rem;">
+        </div>
+        <div class="content">
+          <span class="right floated">
+            <i class="heart outline like icon"></i>
+            17 likes
+          </span>
+          <i class="comment icon"></i>
+          3 comments
+        </div>
+        <div class="extra content">
+          <div class="ui large transparent left icon input">
+            <button type="button" class="btn btn-outline-default btn-rounded waves-effect"><i class="far fa-thumbs-up"
+              aria-hidden="true"></i>Like</button>
+              <button type="button" class="btn btn-outline-default btn-rounded waves-effect"><i class="far fa-comment-dots mr-2"
+                aria-hidden="true"></i>Comment</button>
+          </div>
+        </div>
+        <div class="extra content">
+        </div>
+        <div class="content">
+          <span class="right floated">
+            <i class="far fa-credit-card"></i>
+            Payment Method
+          </span>
+          <i class="fas fa-sort-numeric-down"></i>
+          Quantity
+        </div>
+        <div class="content">
+          <span class="right floated">
+            <select class="mdb-select md-form colorful-select dropdown-success" name="payment_menthod" required>
+              <option value="COD">COD(Cash On Delivery)</option>
+              <option value="UPI">UPI</option>
+            </select>
+          </span>
+          <select class="mdb-select md-form colorful-select dropdown-success" name="item_count" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+          </select>
+          </div>
+          <div class="center aligned header">
+            Table Number<select class="mdb-select md-form colorful-select dropdown-success" name="table_number" required>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+            </select>
+          </div>
+
+        </div>
+        
+        <div class="extra content">
+          <div class="center aligned author">
+            <button class="ui orange button">Buy Now</button>
+        </div>
+      </div>
+    </div>
+    </div>
+      </div>
+    </form>
+    {% endfor %}
+      </div>
+    </div>
+    
+
+
+
+
+<script>
+    // Material Select Initialization
+$(document).ready(function() {
+$('.mdb-select').materialSelect();
+});
+</script>
+</div>
+
+
+
+{% endblock  %}
