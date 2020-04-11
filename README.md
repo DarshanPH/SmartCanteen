@@ -101,7 +101,7 @@ This is the ordered status of the purchaser, when they click on Buy button this 
   <b> 3. Ready </b>
   Your food is ready or food is on the way
 
-<b> 2. Canteen Module </b>
+# 2. Canteen Module 
 Canteen module is for all canteen related operation. In this module there are four submodule 
                                 
                1. Payment 
