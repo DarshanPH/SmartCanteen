@@ -21,8 +21,21 @@ already we did some work on this project half of the projet is already completed
     Frontend: HTML, CSS, JAVASCRIPT, BOOTSTRAP, MD BOOTSTRAP, SEMANTIC UI, GOOGLE charts
     Database: MongoDB
  
- There are three modules in our project
-    1. USERS MODULE
-    2. CANTEEN MODULE
-    3. ADMIN MODULE
+ # <b> There are three modules in our project </b>
+        1. USERS MODULE
+        2. CANTEEN MODULE
+        3. ADMIN MODULE
+   
+    
+  <b> 1. Users Module: </b>
   
+  ![](images/users.png)
+  
+  The above screenshot is users module. We deside to implement lot of feature in this project. main work is almost done some links are exist.
+  In this module the user can order the food in the menue by selecting the bench number, quantity, and payment option. We give some authority to the users. The users can give the like and make the comment about the food. It will help the next person to is that food is good or not.
+  
+Behind the scene, Below Code can work 😀
+
+👇🏻
+
+      
