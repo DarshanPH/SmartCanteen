@@ -2,7 +2,7 @@
 
 # Introduction:
 
-Smart Canteen as the name itself, we can decide to make our canteen digitalized and secure. Basically our plan is We have only got half an hour of Our lunch break, we will waste half an hour by stating in front of the counter. To eliminate this method we decided to build the software.
+Smart Canteen as the name itself, we can decide to make our canteen digitalized and secure. Basically our plan is We have only got half an hour of Our lunch break, we will waste that half an hour by standing in front of the counter. To eliminate this method we decided to build the software.
 
 Our plan is we give a number to each bench available in the canteen, the buyers, or students go and sit on one bench and order the food to that bench by selecting the bench number in the web software.
 
