@@ -10,6 +10,26 @@ There are two payment options is available in the software, 1. Cash on delivery(
 
 # Algorithms We Use:
 
+We use <b>cryptography </b> algorithm:
+
+<b> What is cryptography algorithm </b>
+Cryptography is technique of securing information and communications through use of codes so that only those person for whom the information is intended can understand it and process it.
+
+<b> Features of cryptography algorithm </b>
+
+<b> 1. Confidentiality: </b>
+Only authorized user can be able to access the information
+
+<b> 2. Integrity: </b>
+Information cannot be modified in storage or between sender and reciever.
+
+<b> 3. Authentication: </b>
+Identities of the sender and reciever are confirmed to access the resource.
+
+<b> Implementation of the algorithm in our Project </b>
+
+In our project many confidential informations are exist such as total amout of purchase today, highest sailing item in a canteen e.t.c such information are very confidential. So we decided to implement our cryptography algorithm in this section. all the information which are displayed in the canteen module is encrypted. The one who using this software must enter the secret key which are given to them, then only the information is decrypted. I think this is best way to reduce security attack, and information leakage.  
+
 
 
 # Design and Methodology
@@ -76,9 +96,9 @@ This is the ordered status of the purchaser, when they click on Buy button this 
  Pending status means your order in queue 
  
  <b> 2. Accept </b>
-    Accept means your ordere is takened, It this time your food is cooking
+    Accept means your ordere is takened, In this time your food is cooking
   
-  <b> Ready </b>
+  <b> 3. Ready </b>
   Your food is ready or food is on the way
 
 <b> 2. Canteen Module </b>
@@ -159,3 +179,13 @@ Behind the scene, Below Code can work 😀
     
         
   ![](images/Canteen-section.png)
+  
+  # 3. Admin Module:
+  There is no much functionalities are included in admin panel. Admin can give permission to collage and add new collage to this canteen management software.
+  
+  Admin can able to see the toatl count of the foods availaibke in each and every collages in a chart.
+  
+  
+  
+  
+  This is our plan and we did some work on it. Another 10 more days are required to complete this project. If you have any suggetion on this project or anything wrong in this project you can feel free to say it to me.
